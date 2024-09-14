@@ -3,6 +3,7 @@ from random import randint
 
 lados = 0
 totalDados = 0
+soma = 0
 
 print("Vamos rolar dados!")
 while int(lados) < 6:
@@ -15,4 +16,8 @@ while int(totalDados) < 1:
 print("\nTotal de dado(s) a rolar: " + totalDados)
 
 for x in range(0, int(totalDados)):
-    print("\nValor do dado nº " + str(x+1) + " é " + str(randint(1, int(lados))))
+    valor = randint(1, int(lados))
+    print("\nValor do dado nº " + str(x+1) + " é " + str(valor))
+    soma = soma + valor
+
+print("\nSoma dos dados é: " + str(soma))
