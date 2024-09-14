@@ -6,6 +6,7 @@ on:
 
 jobs:
   entrega:
+    name: Entrega
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -20,8 +21,9 @@ jobs:
             README.md
 
   implementacao:
+    name: Implementacao
     runs-on: ubuntu-latest
-    needs: deliver
+    needs: Entrega
     steps:
       - uses: actions/download-artifact@v4
         with:
