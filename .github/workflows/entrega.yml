@@ -30,3 +30,14 @@ jobs:
           name: rolandodados
       - name: Display structure of downloaded files
         run: ls -R
+
+  docker:
+    needs: Implementacao
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
