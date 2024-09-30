@@ -1,23 +1,53 @@
 # Rolando dados
 from random import randint
 
-lados = 0
-totalDados = 0
-soma = 0
+continua = True
 
-print("Vamos rolar dados!")
-while int(lados) < 6:
+
+def lado():
     lados = input("Digite o número de lados dos dados (mínimo 6): ")
+    return lados
 
-print("\nTotal de lados do(s) dado(s): " + lados)
-while int(totalDados) < 1:
-    totalDados = input("\nDigite o total de dados a rolar (mínimo 1): ")
+def dados():
+    dado = input("\nDigite o total de dados a rolar (mínimo 1): ")
+    return dado
 
-print("\nTotal de dado(s) a rolar: " + totalDados)
+def rolar(totalDados):
+    soma = 0
+    for x in range(0, int(totalDados)):
+        valor = randint(1, int(lados))
+        print("\nValor do dado nº " + str(x + 1) + " é " + str(valor))
+        soma = soma + valor
+    return soma
 
-for x in range(0, int(totalDados)):
-    valor = randint(1, int(lados))
-    print("\nValor do dado nº " + str(x+1) + " é " + str(valor))
-    soma = soma + valor
+while (continua) == True :
 
-print("\nSoma dos dados é: " + str(soma))
+    lados = 0
+    totalDados = 0
+    soma = 0
+    pergunta = ""
+
+    print("Vamos rolar dados!")
+    while int(lados) < 6:
+        lados = lado()
+
+    print("\nTotal de lados do(s) dado(s): " + lados)
+    while int(totalDados) < 1:
+        totalDados = dados()
+
+    print("\nTotal de dado(s) a rolar: " + totalDados)
+
+    soma = rolar(totalDados)
+
+    print("\nSoma dos dados é: " + str(soma))
+
+    while ((pergunta.upper() != "S" and pergunta.upper() != "N")) :
+        pergunta = input("Deseja rolar novos dados? (S/N): ")
+        if (pergunta.upper()) == "N":
+            continua = False
+            print("\nAté logo!!!")
+        elif (pergunta.upper()) == "S":
+            continua = True
+            break
+
+
