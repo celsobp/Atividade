@@ -31,11 +31,17 @@ while (continua) == True :
 
     print("Vamos rolar dados!")
     while int(lados) < 6:
-        lados = lado()
+        try:
+            lados = lado()
+        except EOFError:
+            break
 
     print("\nTotal de lados do(s) dado(s): " + lados)
     while int(totalDados) < 1:
-        totalDados = dados()
+        try:
+            totalDados = dados()
+        except EOFError:
+            break
 
     print("\nTotal de dado(s) a rolar: " + totalDados)
 
