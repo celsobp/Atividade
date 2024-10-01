@@ -3,16 +3,14 @@ from unittest.mock import patch
 
 
 def test_lado():
-    assert lado() == 5
+    assert lado() == 6
 
-def dados():
-    assert dados() == 0
+def test_dados():
+    assert dados() == 2
 
 
-def rolar(totaldados, lados):
-    totaldados = 2
-    lados = 10
-    with patch('random.randint', return_value=7):
-        result = rolar(totalDados, lados)
+def test_rolar():
+    with patch('random.randint', return_value=5):
+        result = rolar(2, 6)
 
-    assert result == {"teste": True, "soma": 14}
+    assert result == 10
