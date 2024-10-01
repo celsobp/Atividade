@@ -3,11 +3,17 @@ from random import randint
 
 
 def lado():
-    lados = input("Digite o número de lados dos dados (mínimo 6): ")
+    try:
+        lados = input("Digite o número de lados dos dados (mínimo 6): ")
+    except EOFError:
+        lados = 6
     return lados
 
 def dados():
-    dado = input("\nDigite o total de dados a rolar (mínimo 1): ")
+    try:
+        dado = input("\nDigite o total de dados a rolar (mínimo 1): ")
+    except EOFError:
+        dado = 2
     return dado
 
 def rolar(totalDados, lados):
@@ -24,19 +30,12 @@ soma = 0
 
 print("Vamos rolar dados!")
 while int(lados) < 6:
-    try:
-        lados = lado()
-    except EOFError:
-        lados = 6
-        break
+    lados = lado()
 
 print("\nTotal de lados do(s) dado(s): " + str(lados))
+
 while int(totalDados) < 1:
-    try:
-        totalDados = dados()
-    except EOFError:
-        totalDados = 2
-        break
+    totalDados = dados()
 
 print("\nTotal de dado(s) a rolar: " + str(totalDados))
 
