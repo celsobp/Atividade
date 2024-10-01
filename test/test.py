@@ -9,7 +9,7 @@ def test_dados():
     assert dados() == 2
 
 
-def test_rolar(totalDados, lados):
+def test_rolar():
     with patch('random.randint', return_value=5):
         result = rolar(2, 6)
 
