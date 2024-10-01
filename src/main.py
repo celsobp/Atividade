@@ -36,14 +36,14 @@ while (continua) == True :
         except EOFError:
             break
 
-    print("\nTotal de lados do(s) dado(s): " + lados)
+    print("\nTotal de lados do(s) dado(s): " + str(lados))
     while int(totalDados) < 1:
         try:
             totalDados = dados()
         except EOFError:
             break
 
-    print("\nTotal de dado(s) a rolar: " + totalDados)
+    print("\nTotal de dado(s) a rolar: " + str(totalDados))
 
     soma = rolar(totalDados, lados)
 
