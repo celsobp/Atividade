@@ -3,10 +3,10 @@ from unittest.mock import patch
 
 
 def test_lado():
-    assert lado() == {"teste": False, "num_lados": 5}
+    assert lado() == 6
 
 def dados():
-    assert dados() == 0
+    assert dados() == 2
 
 
 def rolar(totaldados, lados):
