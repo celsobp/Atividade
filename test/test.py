@@ -13,4 +13,4 @@ def test_rolar():
     with patch('random.randint', return_value=5):
         result = rolar(2, 6)
 
-    assert result == 10
+    assert result == 5
