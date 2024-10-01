@@ -17,7 +17,6 @@ jobs:
           linter: pylint
 
   docker:
-    needs: Implementacao
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
