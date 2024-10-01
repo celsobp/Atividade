@@ -34,6 +34,7 @@ while (continua) == True :
         try:
             lados = lado()
         except EOFError:
+            lados = 6
             break
 
     print("\nTotal de lados do(s) dado(s): " + str(lados))
@@ -41,6 +42,7 @@ while (continua) == True :
         try:
             totalDados = dados()
         except EOFError:
+            totalDados = 2
             break
 
     print("\nTotal de dado(s) a rolar: " + str(totalDados))
@@ -50,7 +52,12 @@ while (continua) == True :
     print("\nSoma dos dados é: " + str(soma))
 
     while ((pergunta.upper() != "S" and pergunta.upper() != "N")) :
-        pergunta = input("Deseja rolar novos dados? (S/N): ")
+        try:
+            pergunta = input("Deseja rolar novos dados? (S/N): ")
+        except EOFError:
+            pergunta = "N"
+            break
+
         if (pergunta.upper()) == "N":
             continua = False
             print("\nAté logo!!!")
