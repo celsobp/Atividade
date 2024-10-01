@@ -17,37 +17,30 @@ def rolar(totalDados, lados):
         print("\nValor do dado nº " + str(x + 1) + " é " + str(valor))
         soma = soma + valor
     return soma
-continua = True
 
+lados = 0
+totalDados = 0
+soma = 0
 
+print("Vamos rolar dados!")
+while int(lados) < 6:
+    try:
+        lados = lado()
+    except EOFError:
+        lados = 6
+        break
 
+print("\nTotal de lados do(s) dado(s): " + str(lados))
+while int(totalDados) < 1:
+    try:
+        totalDados = dados()
+    except EOFError:
+        totalDados = 2
+        break
 
-while (continua) == True :
+print("\nTotal de dado(s) a rolar: " + str(totalDados))
 
-    lados = 0
-    totalDados = 0
-    soma = 0
-    pergunta = ""
+soma = rolar(totalDados, lados)
 
-    print("Vamos rolar dados!")
-    while int(lados) < 6:
-        try:
-            lados = lado()
-        except EOFError:
-            lados = 6
-            break
-
-    print("\nTotal de lados do(s) dado(s): " + str(lados))
-    while int(totalDados) < 1:
-        try:
-            totalDados = dados()
-        except EOFError:
-            totalDados = 2
-            break
-
-    print("\nTotal de dado(s) a rolar: " + str(totalDados))
-
-    soma = rolar(totalDados, lados)
-
-    print("\nSoma dos dados é: " + str(soma))
+print("\nSoma dos dados é: " + str(soma))
 
