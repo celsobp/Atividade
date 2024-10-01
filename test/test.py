@@ -3,7 +3,7 @@ from unittest.mock import patch
 
 
 def test_lado():
-    assert lado() == 5
+    assert lado() == {"teste": False, "num_lados": 5}
 
 def dados():
     assert dados() == 0
