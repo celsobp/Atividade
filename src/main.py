@@ -51,18 +51,3 @@ while (continua) == True :
 
     print("\nSoma dos dados é: " + str(soma))
 
-    while ((pergunta.upper() != "S" and pergunta.upper() != "N")) :
-        try:
-            pergunta = input("Deseja rolar novos dados? (S/N): ")
-        except EOFError:
-            pergunta = "N"
-            break
-
-        if (pergunta.upper()) == "N":
-            continua = False
-            print("\nAté logo!!!")
-        elif (pergunta.upper()) == "S":
-            continua = True
-            break
-
-

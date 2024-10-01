@@ -2,11 +2,11 @@ from src.main import *
 from unittest.mock import patch
 
 
-#def test_lado():
-#    assert lado() == {6}
+def test_lado():
+    assert lado() == {6}
 
-#def dados():
-#    assert dados() == 2
+def dados():
+    assert dados() == 2
 
 
 def rolar(totaldados, lados):
